@@ -1,6 +1,8 @@
 -- CALL WITH: sqlplus / as sysdba @run_all_diagnostics.sql _date="$(date +%Y%m%d_%H%M%S)"
 
-spool diag_report_&&_date..log
+define _dte = &1
+
+spool diag_report_&&_dte..log
 prompt === RUN: diag_pdb_status ===
 @diag_pdb_status.sql
 
